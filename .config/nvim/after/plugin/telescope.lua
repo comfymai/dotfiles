@@ -3,7 +3,7 @@ local builtin = require("telescope.builtin")
 
 telescope.setup {
     defaults = {
-        file_ignore_patterns = { "node_modules", "yarn.lock" }
+        file_ignore_patterns = { "node_modules", "yarn.lock", "target/debug" }
     },
     extensions = {
         file_browser = {
