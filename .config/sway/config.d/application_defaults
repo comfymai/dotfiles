@@ -19,10 +19,10 @@ for_window [class="vivaldi"] focus
 
 
 # Discord to Workspace 5
-assign [app_id="discord"] 2
+assign [app_id="discord"] 5
 for_window [app_id="discord"] focus
 
-assign [class="discord"] 2
+assign [class="discord"] 5
 for_window [class="discord"] focus
 
 # set floating (nontiling)for apps needing it:

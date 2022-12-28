@@ -4,8 +4,8 @@ exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # Desktop notifications
 exec mako
 
-# Run script to initialise swww to randomise wallpapers every few minutes
-exec swww init && $HOME/scripts/swww_randomise.sh $HOME/Downloads/wallpapers/
+# Run script to initialise swww wallpapers
+exec swww init && $HOME/scripts/swww_randomise.sh
 
 # Network Applet
 exec nm-applet --indicator

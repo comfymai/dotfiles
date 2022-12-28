@@ -7,6 +7,9 @@ export WLR_RENDERER_ALLOW_SOFTWARE=1
 
 export TERMINAL=kitty
 
+export META_WALLPAPERS_DAY=$HOME/meta/wallpapers/day/
+export META_WALLPAPERS_NIGHT=$HOME/meta/wallpapers/night/
+
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias pacman="sudo pacman"
