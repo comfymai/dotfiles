@@ -1,5 +1,5 @@
-vim.keymap.set("n", "<leader>ft", "<cmd>Prettier<CR>")
-vim.keymap.set("x", "<leader>ft", "<cmd>Prettier<CR>")
+vim.keymap.set("n", "<leader>fp", "<cmd>Prettier<CR>")
+vim.keymap.set("x", "<leader>fp", "<cmd>Prettier<CR>")
 
 local prettier = require("prettier")
 

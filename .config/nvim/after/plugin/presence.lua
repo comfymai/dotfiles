@@ -4,6 +4,6 @@ require("presence"):setup({
     buttons = false,
     show_time = false,
     editing_text = "Dealing with a subject",
-    workspace_text = "Engaging in scientific experiments",
+    workspace_text = "Engaging in experiments",
     file_explorer_text = "Exploring through %s"
 })
