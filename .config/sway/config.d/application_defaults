@@ -11,11 +11,11 @@ for_window [app_id=thunar] focus
 for_window [app_id="xed"] focus2
 
 # Vivaldi to workspace 2
-assign [app_id="vivaldi"] 2
-for_window [app_id="vivaldi"] focus
+assign [app_id="Vivaldi"] 2
+for_window [app_id="Vivaldi"] focus
 
-assign [class="vivaldi"] 2
-for_window [class="vivaldi"] focus
+assign [class="Vivaldi"] 2
+for_window [class="Vivaldi"] focus
 
 
 # Discord to Workspace 5
@@ -58,4 +58,4 @@ for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
 
 # Inhibit idle
 for_window [app_id="firefox"] inhibit_idle fullscreen
-for_window [app_id="vivaldi"] inhibit_idle fullscreen
+for_window [app_id="Vivaldi"] inhibit_idle fullscreen
