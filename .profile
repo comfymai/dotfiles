@@ -5,7 +5,7 @@ export WLR_NO_HARDWARE_CURSORS=1
 #export WLR_NO_HARDWARE_CURSORS=0
 export WLR_RENDERER_ALLOW_SOFTWARE=1
 
-export TERMINAL=kitty
+export TERMINAL=alacritty
 
 export META_WALLPAPERS_DAY=$HOME/meta/wallpapers/day/
 export META_WALLPAPERS_NIGHT=$HOME/meta/wallpapers/night/
