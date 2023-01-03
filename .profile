@@ -28,3 +28,6 @@ alias tx="tmux"
 alias txn="tmux new"
 alias txl="tmux list-sessions"
 alias txa="tmux attach -t"
+
+# TUI To-do
+alias todo="dooit"
