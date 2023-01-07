@@ -26,3 +26,4 @@ prettier.setup({
       single_attribute_per_line = true
   }
 })
+

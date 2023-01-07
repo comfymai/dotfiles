@@ -49,7 +49,8 @@ lsp.configure("jsonls", {
                 select = {
                     "package.json",
                     ".eslintrc",
-                    "tsconfig.json"
+                    "tsconfig.json",
+                    "prettierrc.json",
                 }
             },
             validate = { enable = true },

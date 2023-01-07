@@ -28,12 +28,12 @@ require("packer").startup(function(use)
         end,
     }
 
-    use("jose-elias-alvarez/null-ls.nvim")
-    use("MunifTanjim/prettier.nvim")
-
     -- Colour preview
     use("norcalli/nvim-colorizer.lua")
     use("nvim-lualine/lualine.nvim")
+
+    use("jose-elias-alvarez/null-ls.nvim")
+    use("MunifTanjim/prettier.nvim")
 
     use("numToStr/Comment.nvim")
 
@@ -85,7 +85,7 @@ require("packer").startup(function(use)
     -- Discord presence
     use "andweeb/presence.nvim"
 
-    use "manzeloth/live-server"
+    use "turbio/bracey.vim"
 
     -- Basically cheating
     use "easymotion/vim-easymotion"
