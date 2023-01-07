@@ -1,5 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="af-magic"
+ZSH_THEME="bira"
 
 source $HOME/.profile
 source $ZSH/oh-my-zsh.sh
