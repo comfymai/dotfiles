@@ -4,12 +4,14 @@ require("packer").startup(function(use)
     use "wbthomason/packer.nvim"
 
     use "folke/tokyonight.nvim"
-
+    use "ray-x/aurora"
 
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
+
+    use "lukas-reineke/indent-blankline.nvim"
 
     -- Telescope and Harpoon for comfy file navigation
     use { "nvim-telescope/telescope.nvim", branch = "0.1.x", requires = { "nvim-lua/plenary.nvim" } }
@@ -89,6 +91,9 @@ require("packer").startup(function(use)
 
     -- Basically cheating
     use "easymotion/vim-easymotion"
+
+    -- Persist sessions through reboots, paired with tmux-ressurect
+    use "tpope/vim-obsession"
 end)
 
 require("colorizer").setup()
