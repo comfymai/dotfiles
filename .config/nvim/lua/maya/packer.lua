@@ -94,6 +94,8 @@ require("packer").startup(function(use)
 
     -- Persist sessions through reboots, paired with tmux-ressurect
     use "tpope/vim-obsession"
+
+    use "roobert/tailwindcss-colorizer-cmp.nvim"
 end)
 
 require("colorizer").setup()
