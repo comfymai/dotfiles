@@ -20,10 +20,11 @@ for_window [class="Vivaldi"] focus
 
 # Discord to Workspace 5
 assign [app_id="discord"] 5
-for_window [app_id="discord"] focus
-
 assign [class="discord"] 5
-for_window [class="discord"] focus
+assign [app_id="krita"] 6
+assign [class="krita"] 6
+assign [app_id="Audacity"] 6
+assign [class="Audacity"] 6
 
 # set floating (nontiling)for apps needing it:
 for_window [class="Yad" instance="yad"] floating enable
