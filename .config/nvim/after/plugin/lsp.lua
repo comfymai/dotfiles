@@ -23,7 +23,7 @@ lsp.ensure_installed({
 lsp.nvim_workspace()
 
 lsp.set_preferences({
-    sign_icons = {}
+    sign_icons = {},
 })
 
 require("fidget").setup()
@@ -38,7 +38,7 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 })
 
 lsp.setup_nvim_cmp({
-    mapping = cmp_mappings
+    mapping = cmp_mappings,
 })
 
 -- Sets up autocompletion for selected JSON files

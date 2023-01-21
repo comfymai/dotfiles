@@ -1,5 +1,7 @@
 -- Quick opens file browser
 vim.keymap.set("n", "<leader>pv", "<cmd>Telescope file_browser path=%:p:h<cr>")
+vim.keymap.set("n", "<leader>pz", "<cmd>Hex<cr>")
+vim.keymap.set("n", "<leader>px", "<cmd>Vex<cr>")
 
 -- Viewport centering for some sharp jumps
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -20,5 +22,9 @@ vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"*Y")
 
+-- [F]orma[t]
 vim.keymap.set("n", "<leader>ft", "<cmd>Format<cr>")
+
+-- [F]ile [S]ave
+vim.keymap.set("n", "<leader>fs", "<cmd>w<cr>")
 
