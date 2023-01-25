@@ -1,30 +1,23 @@
 # Assign workspaces
-assign [app_id="firefox"] 10
-for_window [app_id="firefox"] focus
-
-assign [class="firefox"] 10
-for_window [class="firefox"] focus
+assign [app_id="Vivaldi"] 2
+assign [class="Vivaldi"] 2
 
 assign [app_id=thunar] 3
-for_window [app_id=thunar] focus
 
-for_window [app_id="xed"] focus2
-
-# Vivaldi to workspace 2
-assign [app_id="Vivaldi"] 2
-for_window [app_id="Vivaldi"] focus
-
-assign [class="Vivaldi"] 2
-for_window [class="Vivaldi"] focus
-
-
-# Discord to Workspace 5
 assign [app_id="discord"] 5
 assign [class="discord"] 5
 assign [app_id="krita"] 6
 assign [class="krita"] 6
 assign [app_id="Audacity"] 6
 assign [class="Audacity"] 6
+
+assign [app_id="Lutris"] 7
+assign [class="Lutris"] 7
+assign [app_id="Steam"] 7
+assign [class="Steam"] 7
+
+assign [app_id="Obsidian"] 9
+assign [class="Obsidian"] 9
 
 # set floating (nontiling)for apps needing it:
 for_window [class="Yad" instance="yad"] floating enable
@@ -56,6 +49,3 @@ for_window [app_id="xsensors"] floating enable
 for_window [title="Save File"] floating enable
 for_window [app_id="firefox" title="Firefox — Sharing Indicator"] kill
 
-# Inhibit idle
-for_window [app_id="firefox"] inhibit_idle fullscreen
-for_window [app_id="Vivaldi"] inhibit_idle fullscreen

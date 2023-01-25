@@ -1,56 +1,69 @@
 font:
   normal:
-    family: Monofur Nerd Font Mono
+    family: Monofur Nerd Font
     style: Book
 
   bold:
-    family: Monofurbold Nerd Font Mono
+    family: Monofurbold Nerd Font
     style: Bold
 
   italic:
-    family: Monofuritalic Nerd Font Mono
+    family: Monofuritalic Nerd Font
     style: Italic
 
   bold_italic:
-    family: Monofurbold Nerd Font Mono
+    family: Monofur Nerd Font
     style: Bold
 
-  size: 20
+  size: 18
 
 draw_bold_text_with_bright_colors: true
 
 window:
-  opacity: 0.8
+  opacity: 0.85
 
   padding:
     x: 4
     y: 4
-  
-# Colors (Ayu Dark)
+
 colors:
-  # Default colors
   primary:
-    background: '0x0A0E14'
-    foreground: '0xB3B1AD'
-
-  # Normal colors
+    background: "0x232136"
+    foreground: "0xe0def4"
+  cursor:
+    text: "0xe0def4"
+    cursor: "0x56526e"
+  vi_mode_cursor:
+    text: "0xe0def4"
+    cursor: "0x56526e"
+  line_indicator:
+    foreground: None
+    background: None
+  selection:
+    text: "0xe0def4"
+    background: "0x44415a"
   normal:
-    black:   '0x01060E'
-    red:     '0xEA6C73'
-    green:   '0x91B362'
-    yellow:  '0xF9AF4F'
-    blue:    '0x53BDFA'
-    magenta: '0xFAE994'
-    cyan:    '0x90E1C6'
-    white:   '0xC7C7C7'
-
-  # Bright colors
+    black: "0x393552"
+    red: "0xeb6f92"
+    green: "0x3e8fb0"
+    yellow: "0xf6c177"
+    blue: "0x9ccfd8"
+    magenta: "0xc4a7e7"
+    cyan: "0xea9a97"
+    white: "0xe0def4"
   bright:
-    black:   '0x686868'
-    red:     '0xF07178'
-    green:   '0xC2D94C'
-    yellow:  '0xFFB454'
-    blue:    '0x59C2FF'
-    magenta: '0xFFEE99'
-    cyan:    '0x95E6CB'
-    white:   '0xFFFFFF'
+    black: "0x6e6a86"
+    red: "0xeb6f92"
+    green: "0x3e8fb0"
+    yellow: "0xf6c177"
+    blue: "0x9ccfd8"
+    magenta: "0xc4a7e7"
+    cyan: "0xea9a97"
+    white: "0xe0def4"
+  hints:
+    start:
+      foreground: "#908caa"
+      background: "#2a273f"
+    end:
+      foreground: "#6e6a86"
+      background: "#2a273f"

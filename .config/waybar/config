@@ -1,0 +1,128 @@
+{
+    "layer": "top",
+    "position": "top",
+
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode",
+    ],
+ 
+    "modules-center": [
+        "sway/window"
+    ],
+
+    "modules-right": [
+        "temperature",
+        "memory",
+        "cpu",
+        "pulseaudio",
+        "clock",
+        "tray",
+    ],
+
+    "clock": {
+        "interval": 1,
+        "format-alt": " {:%e %b %Y}",
+        "format": "{:%H:%M:%S @ %e %B %Y (%a)}",
+    },
+
+    "cpu": {
+        "interval": 5,
+        "format": "  {usage}% ({load})",
+        "states": {
+            "warning": 70,
+            "critical": 90,
+        },
+        "on-click": "alacritty -e 'htop'",
+    },
+
+    "custom/keyboard-layout": {
+        "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
+        "interval": 30,
+        "format": "  {}",
+        "signal": 1,
+        "tooltip": false,
+        "on-click": "~/.config/waybar/scripts/keyhint.sh",
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": " {}%",
+        "on-click": "alacritty -e 'htop'", 
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+
+    "sway/mode": {
+        "format": "{}",
+        "tooltip": false
+    },
+
+    "sway/window": {
+        "format": "{}",
+        "max-length": 120
+    },
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "disable-markup" : false,
+        "all-outputs": true,
+        "format": "  {icon}  ",
+        "format-icons": {
+            "1": "",
+            "2": "", // kyute kitty as browser window
+            "3": "",
+            "4": "",
+            "5": "ﭮ",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "",
+            "10": ""
+        }
+    },
+
+    "pulseaudio": {
+        "scroll-step": 1,
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}  {format_source}",
+        "format-bluetooth-muted": " {icon}  {format_source}",
+        "format-muted": "婢 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "וֹ",
+            "headset": "  ",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [""]
+        },
+        "on-click": "pavucontrol",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing":10,
+     },
+    
+    "custom/launcher": {
+        "format":" ",
+        "on-click": "exec wofi -c ~/.config/wofi/config -I",
+        "tooltip": false,
+    },
+
+    "temperature": {
+            "thermal-zone": 2,
+            "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+            "critical-treshold": 80,
+            "format": "{temperatureC}°C",
+            "format-critical": "{temperatureC}°C!",
+            "interval": 100
+        }
+}

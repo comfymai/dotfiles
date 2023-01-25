@@ -39,9 +39,17 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 
 lsp.setup_nvim_cmp({
     mapping = cmp_mappings,
+    formatting = {
+        -- The normal setup apparently doesn't work properly with lsp-zero
+        -- but this gets the job done.
+        format = function (entry, vim_item)
+            local formatter = require("tailwindcss-colorizer-cmp").formatter
+            return formatter(entry, vim_item)
+        end
+    }
 })
 
--- Sets up autocompletion for selected JSON files
+
 lsp.configure("jsonls", {
     settings = {
         json = {
@@ -99,3 +107,10 @@ lsp.on_attach(function(_, bufnr)
 end)
 
 lsp.setup()
+
+require("typescript").setup({})
+require ("null-ls").setup({
+    sources = {
+        require("typescript.extensions.null-ls.code-actions")
+    }
+})
