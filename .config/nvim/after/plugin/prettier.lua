@@ -19,7 +19,6 @@ prettier.setup({
         "yaml",
     },
     cli_options = {
-        semi = false,
         tab_width = 4,
         arrow_parens = "avoid",
         single_attribute_per_line = true

@@ -27,7 +27,7 @@ end)
 
 set_keymap("F", function()
     hop.hint_char1({
-        direction = after
+        direction = before
     })
 end)
 
