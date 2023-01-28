@@ -1,5 +1,4 @@
-export SWWW_TRANSITION_FPS=60
-export SWWW_TRANSITION_STEP=2
+export SWWW_TRANSITION_FPS=30
 
 INTERVAL=600
 
@@ -20,7 +19,7 @@ while true; do
 		done \
 		| sort -n | cut -d':' -f2- \
 		| while read -r img; do
-			swww img "$img"
+			swww img "$img" --transition-type grow --transition-pos 0.5,0.5 --transition-step 120
 			sleep $INTERVAL
 		done
 done
