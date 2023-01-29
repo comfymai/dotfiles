@@ -5,27 +5,49 @@ require("packer").startup(function(use)
 
     -- Themes
     use "folke/tokyonight.nvim"
-    use "ray-x/aurora"
-    use { "catppuccin/nvim", as = "catppuccin" }
     use "rose-pine/neovim"
 
-    use {
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
-    }
-
+    -- UI elements
     use "lukas-reineke/indent-blankline.nvim"
+    use("petertriho/nvim-scrollbar")
+    use("nvim-lualine/lualine.nvim") -- Bottom status bar
+    use({
+        "utilyre/barbecue.nvim",
+        tag = "*",
+        requires = {
+            "neovim/nvim-lspconfig",
+            "SmiteshP/nvim-navic",
+        },
+    }) -- Top winbar
+    use("norcalli/nvim-colorizer.lua") -- Colour previewing
+    use "lewis6991/gitsigns.nvim" -- 
+    use "j-hui/fidget.nvim" -- Displays LSP/formatter status above status bar
+    use "roobert/tailwindcss-colorizer-cmp.nvim"
+    use "folke/todo-comments.nvim"
+    use "nvim-tree/nvim-web-devicons"
 
+    -- Menus
     use { "nvim-telescope/telescope.nvim", branch = "0.1.x", requires = { "nvim-lua/plenary.nvim" } }
     use { "nvim-telescope/telescope-fzf-native.nvim", run = "make", cond = vim.fn.executable "make" == 1 }
     use { "nvim-telescope/telescope-file-browser.nvim" }
     use { "nvim-telescope/telescope-ui-select.nvim" }
     use "ThePrimeagen/harpoon"
+    use "mbbill/undotree"
+    use "tpope/vim-fugitive"
+    use "tpope/vim-rhubarb"
 
+
+    -- Motions
+    use {
+        'phaazon/hop.nvim',
+        branch = 'v2',
+    }
     use "tpope/vim-surround"
-
     use "windwp/nvim-ts-autotag"
-
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
     use {
         "nvim-treesitter/nvim-treesitter",
         run = function()
@@ -33,22 +55,9 @@ require("packer").startup(function(use)
             ts_update()
         end,
     }
-
-    use("norcalli/nvim-colorizer.lua")
-
-    use("nvim-lualine/lualine.nvim")
-
-    use("jose-elias-alvarez/null-ls.nvim")
-    use("MunifTanjim/prettier.nvim")
-
     use("numToStr/Comment.nvim")
 
-    use "tpope/vim-fugitive"
-    use "tpope/vim-rhubarb"
-    use "lewis6991/gitsigns.nvim"
-
-    use "mbbill/undotree"
-
+    -- LSP, completion and formatting
     use {
         "VonHeikemen/lsp-zero.nvim",
         requires = {
@@ -67,35 +76,24 @@ require("packer").startup(function(use)
             { "rafamadriz/friendly-snippets" },
         }
     }
-    use "j-hui/fidget.nvim"
-
+    use("jose-elias-alvarez/null-ls.nvim")
+    use("MunifTanjim/prettier.nvim")
+    use({
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+        requires = { { "nvim-tree/nvim-web-devicons" } }
+    })
     use "jose-elias-alvarez/typescript.nvim"
-
     use "b0o/schemastore.nvim"
 
-    use "nvim-tree/nvim-web-devicons"
-
-    use "folke/todo-comments.nvim"
-
-    use "simrat39/symbols-outline.nvim"
+    -- Other
+    use "andweeb/presence.nvim" -- Discord presence
+    use "tpope/vim-obsession"
     use({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     })
-
-    use "andweeb/presence.nvim"
-
-    use {
-        'phaazon/hop.nvim',
-        branch = 'v2',
-    }
-
-    use "tpope/vim-obsession"
-
-    use "roobert/tailwindcss-colorizer-cmp.nvim"
-
-    -- For proper Japanese input
-    use "h-hg/fcitx.nvim"
+    use "h-hg/fcitx.nvim" -- For Japanese input with fcitx5
 end)
 
 require("colorizer").setup()
