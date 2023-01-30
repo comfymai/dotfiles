@@ -1,7 +1,3 @@
-vim.keymap.set("n", "<leader>pv", "<cmd>Telescope file_browser path=%:p:h<cr>")
-vim.keymap.set("n", "<leader>pz", "<cmd>Hex<cr>")
-vim.keymap.set("n", "<leader>px", "<cmd>Vex<cr>")
-
 -- Viewport adjustments
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -22,3 +18,4 @@ vim.keymap.set("n", "<leader>Y", "\"*Y")
 
 vim.keymap.set("n", "<leader>ft", "<cmd>Format<cr>")
 
+vim.keymap.set("n", "<leader>gb", "<cmd>GitBlameToggle<cr>")

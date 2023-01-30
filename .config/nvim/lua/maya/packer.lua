@@ -25,6 +25,7 @@ require("packer").startup(function(use)
     use "roobert/tailwindcss-colorizer-cmp.nvim"
     use "folke/todo-comments.nvim"
     use "nvim-tree/nvim-web-devicons"
+    use "f-person/git-blame.nvim"
 
     -- Menus
     use { "nvim-telescope/telescope.nvim", branch = "0.1.x", requires = { "nvim-lua/plenary.nvim" } }

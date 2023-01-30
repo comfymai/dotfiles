@@ -1,4 +1,5 @@
 local telescope = require("telescope")
+local file_browser = require("telescope").extensions.file_browser
 local builtin = require("telescope.builtin")
 
 telescope.setup {
@@ -15,8 +16,25 @@ telescope.setup {
 }
 
 telescope.load_extension('fzf')
--- Enables Telescope's File Browser instead of NetRw
 telescope.load_extension('file_browser')
+
+local browser_opts = {
+    path = "%:p:h"
+}
+
+vim.keymap.set("n", "<leader>pv", function()
+    file_browser.file_browser(browser_opts)
+end)
+
+vim.keymap.set("n", "<leader>px", function()
+    vim.cmd("vsplit")
+    file_browser.file_browser(browser_opts)
+end)
+
+vim.keymap.set("n", "<leader>pz", function()
+    vim.cmd("hsplit")
+    file_browser.file_browser(browser_opts)
+end)
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
