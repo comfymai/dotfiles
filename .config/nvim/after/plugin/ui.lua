@@ -8,6 +8,7 @@ require("tokyonight").setup {
 }
 
 vim.cmd("colorscheme tokyonight")
+
 -- Bottom status line
 require("lualine").setup {
     options = {

@@ -19,3 +19,4 @@ vim.keymap.set("n", "<leader>Y", "\"*Y")
 vim.keymap.set("n", "<leader>ft", "<cmd>Format<cr>")
 
 vim.keymap.set("n", "<leader>gb", "<cmd>GitBlameToggle<cr>")
+

@@ -39,14 +39,14 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 
 lsp.setup_nvim_cmp({
     mapping = cmp_mappings,
-    formatting = {
-        -- The normal setup apparently doesn't work properly with lsp-zero
-        -- but this gets the job done.
-        format = function(entry, vim_item)
-            local formatter = require("tailwindcss-colorizer-cmp").formatter
-            return formatter(entry, vim_item)
-        end
-    }
+    -- formatting = {
+    --     -- The normal setup apparently doesn't work properly with lsp-zero
+    --     -- but this gets the job done.
+    --     format = function(entry, vim_item)
+    --         local formatter = require("tailwindcss-colorizer-cmp").formatter
+    --         return formatter(entry, vim_item)
+    --     end
+    -- }
 })
 
 
@@ -109,28 +109,25 @@ end)
 lsp.setup()
 
 -- For code actions in Typescript files (add missing imports, format imports, etc.)
+local null_ls = require("null-ls")
 require("typescript").setup {}
-require("null-ls").setup {
-    sources = {
-        require("typescript.extensions.null-ls.code-actions")
-    }
-}
+null_ls.setup {}
 
 local function keymap (motion, action)
     vim.keymap.set("n", motion, action)
 end
 
-require("lspsaga").setup {
-    ui = {
-        code_action = "",
-    }
-}
-keymap("<leader>gh", "<cmd>Lspsaga lsp_finder<cr>")
-keymap("<leader>ca", "<cmd>Lspsaga code_action<cr>")
-keymap("<leader>pd", "<cmd>Lspsaga peek_definition<cr>")
-keymap("<leader>gd", "<cmd>Lspsaga goto_definition<cr>")
-keymap("K", "<cmd>Lspsaga hover_doc<cr>")
-keymap("<leader>sl", "<cmd>Lspsaga show_line_diagnostics<cr>")
-keymap("<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<cr>")
-keymap("<leader>ot", "<cmd>Lspsaga term_toggle<cr>")
+-- require("lspsaga").setup {
+--     ui = {
+--         code_action = "",
+--     }
+-- }
+-- keymap("<leader>gh", "<cmd>Lspsaga lsp_finder<cr>")
+-- keymap("<leader>ca", "<cmd>Lspsaga code_action<cr>")
+-- keymap("<leader>pd", "<cmd>Lspsaga peek_definition<cr>")
+-- keymap("<leader>gd", "<cmd>Lspsaga goto_definition<cr>")
+-- keymap("K", "<cmd>Lspsaga hover_doc<cr>")
+-- keymap("<leader>sl", "<cmd>Lspsaga show_line_diagnostics<cr>")
+-- keymap("<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<cr>")
+-- keymap("<leader>ot", "<cmd>Lspsaga term_toggle<cr>")
 

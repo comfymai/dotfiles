@@ -79,6 +79,7 @@ require("packer").startup(function(use)
     }
     use("jose-elias-alvarez/null-ls.nvim")
     use("MunifTanjim/prettier.nvim")
+    use("editorconfig/editorconfig-vim")
     use({
         "glepnir/lspsaga.nvim",
         branch = "main",
@@ -100,7 +101,7 @@ end)
 require("colorizer").setup()
 require("Comment").setup()
 require("todo-comments").setup()
-require("tailwindcss-colorizer-cmp").setup({
-    color_square_width = 1,
-    color_hint_width = 1
-})
+-- require("tailwindcss-colorizer-cmp").setup({
+--     color_square_width = 1,
+--     color_hint_width = 1
+-- })
