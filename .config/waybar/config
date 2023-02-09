@@ -1,20 +1,15 @@
 {
-    "layer": "top",
-    "position": "top",
-
+    "layer": "bottom",
+    "position": "bottom",
     "modules-left": [
         "sway/workspaces",
         "sway/mode",
     ],
- 
-    "modules-center": [
-        "sway/window"
-    ],
 
     "modules-right": [
-        "temperature",
-        "memory",
         "cpu",
+        "memory",
+        "temperature",
         "pulseaudio",
         "clock",
         "tray",
@@ -28,12 +23,12 @@
 
     "cpu": {
         "interval": 5,
-        "format": "  {usage}% ({load})",
+        "format": "  {usage}%",
         "states": {
             "warning": 70,
             "critical": 90,
         },
-        "on-click": "alacritty -e 'htop'",
+        "on-click": "kitty -e 'htop'",
     },
 
     "custom/keyboard-layout": {
@@ -48,7 +43,7 @@
     "memory": {
         "interval": 5,
         "format": " {}%",
-        "on-click": "alacritty -e 'htop'", 
+        "on-click": "kitty -e 'htop'", 
         "states": {
             "warning": 70,
             "critical": 90

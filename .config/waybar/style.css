@@ -36,7 +36,7 @@
     min-height: 0;
     margin: 0;
     padding: 0;
-    font-family: Monofur Nerd Font Mono;
+    font-family: UbuntuMono Nerd Font;
 }
 
 #waybar {
@@ -51,22 +51,11 @@
 #mode,
 #pulseaudio,
 #tray {
-    padding: 0.5rem 0.6rem;
+    padding: .2rem .8rem;
     font-weight: bold;
     color: white;
     text-shadow: 0 0 4px #420225;
-}
-
-#temperature {
-    margin-left: 12px;
-}
-
-#cpu.warning {
-    color: @peach;
-}
-
-#cpu.critical {
-    color: @red;
+    margin-bottom: 2px;
 }
 
 #memory {
@@ -96,30 +85,13 @@
     color: orange;
 }
 
-#pulseaudio {
-    padding-top: 6px;
-}
-
 #temperature.critical {
     color: red;
-}
-
-@keyframes window-highlight {
-    0% {
-        border-bottom-color: @mauve;
-    }
-    50% {
-        border-bottom-color: @lavender; 
-    }
-    100% {
-        border-bottom-color: @mauve; 
-    }
 }
 
 #window {
     font-weight: bold;
     border-bottom: 2px solid transparent;
-    animation: window-highlight 6s linear infinite;
 }
 
 #workspaces {
@@ -128,40 +100,16 @@
 
 #workspaces button {
     border: 2px solid transparent;
-    color: #2b0023;
-    text-shadow: 0 0 3px #ffbaee, 0 1px 2px #ff9ce6;
-    background-color: rgba(48, 0, 25, 0.25);
-    border-radius: 4px;
+    color: #01333d;
+    font-size: .8em;
     margin-bottom: 0px;
     padding: 0px;
 }
 
-@keyframes slow-invite {
-    10% {
-        border-color: #420225;
-        border-bottom: 2px solid @rosewater;
-        color: #2b0023;
-    }
-    25% {
-        border-color: #420225;
-        border-right: 2px solid @rosewater;
-        color: #2b0023;
-    }
-    50% {
-        border-color: #420225;
-        border-top: 2px solid @rosewater;
-    }
-    75% {
-        border-color: #420225;
-        border-left: 2px solid @rosewater;
-    }
-}
 
 #workspaces button.focused {
-    animation: slow-invite 12s ease-in infinite;
-    color: @pink;
-    margin-bottom: 1px;
-    background-color: rgba(48, 0, 25, 0.75);
+    color: #b8f3ff;
+    background-color: rgba(0, 53, 64, 0.75);
     padding-left: 0;
 }
 
