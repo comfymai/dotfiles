@@ -5,6 +5,8 @@ alias cp="cp -i"
 alias mv="mv -i"
 alias ln="ln -i"
 
+alias rm="trash"
+
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 alias mic-loop="pactl load-module module-loopback"
