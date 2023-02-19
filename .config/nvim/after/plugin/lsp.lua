@@ -10,7 +10,6 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
     "tsserver",
-    "sumneko_lua",
     "eslint",
     "rust_analyzer",
     "jsonls",
@@ -117,17 +116,20 @@ local function keymap (motion, action)
     vim.keymap.set("n", motion, action)
 end
 
--- require("lspsaga").setup {
---     ui = {
---         code_action = "",
---     }
--- }
--- keymap("<leader>gh", "<cmd>Lspsaga lsp_finder<cr>")
--- keymap("<leader>ca", "<cmd>Lspsaga code_action<cr>")
--- keymap("<leader>pd", "<cmd>Lspsaga peek_definition<cr>")
--- keymap("<leader>gd", "<cmd>Lspsaga goto_definition<cr>")
--- keymap("K", "<cmd>Lspsaga hover_doc<cr>")
--- keymap("<leader>sl", "<cmd>Lspsaga show_line_diagnostics<cr>")
--- keymap("<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<cr>")
--- keymap("<leader>ot", "<cmd>Lspsaga term_toggle<cr>")
+require("lspsaga").setup {
+    ui = {
+        code_action = "",
+    }
+}
+keymap("<leader>gh", "<cmd>Lspsaga lsp_finder<cr>")
+keymap("<leader>ca", "<cmd>Lspsaga code_action<cr>")
+keymap("<leader>pd", "<cmd>Lspsaga peek_definition<cr>")
+keymap("<leader>gd", "<cmd>Lspsaga goto_definition<cr>")
+keymap("K", "<cmd>Lspsaga hover_doc<cr>")
+keymap("<leader>sl", "<cmd>Lspsaga show_line_diagnostics<cr>")
+keymap("<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<cr>")
+keymap("<leader>ot", "<cmd>Lspsaga term_toggle<cr>")
 
+require("trouble").setup {}
+keymap("<leader>xx", "<cmd>TroubleToggle<cr>")
+keymap("<leader>xq", "<cmd>TroubleToggle quickfix<cr>")

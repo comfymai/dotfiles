@@ -13,57 +13,45 @@ font:
 
   bold_italic:
     family: FantasqueSansMono Nerd Font 
-    style: Bold Italic
+    style: Bold
 
-  size: 16
+  size: 18
 
 draw_bold_text_with_bright_colors: true
 
 window:
-  opacity: 0.9
+  opacity: 0.8
 
   padding:
     x: 4
     y: 4
 
+# Colors (Zenburn)
+# Orginally designed by jnurmine for vim.
 colors:
+  # Default colors
   primary:
-    background: "0x221629"
-    foreground: "0xe0def4"
-  cursor:
-    text: "0xe0def4"
-    cursor: "0x56526e"
-  vi_mode_cursor:
-    text: "0xe0def4"
-    cursor: "0x56526e"
-  line_indicator:
-    foreground: None
-    background: None
-  selection:
-    text: "0xe0def4"
-    background: "0x44415a"
+    background: '0x2e0a1c' # handpicked darker red!
+    foreground: '0xDCDCCC'
+
+  # Normal colors
   normal:
-    black: "0x393552"
-    red: "0xeb6f92"
-    green: "0x3e8fb0"
-    yellow: "0xf6c177"
-    blue: "0x9ccfd8"
-    magenta: "0xc4a7e7"
-    cyan: "0xea9a97"
-    white: "0xe0def4"
+    black:   '0x1E2320'
+    red:     '0xD78787'
+    green:   '0x60B48A'
+    yellow:  '0xDFAF8F'
+    blue:    '0x506070'
+    magenta: '0xDC8CC3'
+    cyan:    '0x8CD0D3'
+    white:   '0xDCDCCC'
+
+  # Bright colors
   bright:
-    black: "0x6e6a86"
-    red: "0xeb6f92"
-    green: "0x3e8fb0"
-    yellow: "0xf6c177"
-    blue: "0x9ccfd8"
-    magenta: "0xc4a7e7"
-    cyan: "0xea9a97"
-    white: "0xe0def4"
-  hints:
-    start:
-      foreground: "#908caa"
-      background: "#2a273f"
-    end:
-      foreground: "#6e6a86"
-      background: "#2a273f"
+    black:   '0x709080'
+    red:     '0xDCA3A3'
+    green:   '0xC3BF9F'
+    yellow:  '0xF0DFAF'
+    blue:    '0x94BFF3'
+    magenta: '0xEC93D3'
+    cyan:    '0x93E0E3'
+    white:   '0xFFFFFF'

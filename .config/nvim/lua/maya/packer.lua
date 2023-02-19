@@ -20,12 +20,13 @@ require("packer").startup(function(use)
         },
     }) -- Top winbar
     use("norcalli/nvim-colorizer.lua") -- Colour previewing
-    use "lewis6991/gitsigns.nvim" -- 
+    use "lewis6991/gitsigns.nvim" --
     use "j-hui/fidget.nvim" -- Displays LSP/formatter status above status bar
     use "roobert/tailwindcss-colorizer-cmp.nvim"
     use "folke/todo-comments.nvim"
     use "nvim-tree/nvim-web-devicons"
     use "f-person/git-blame.nvim"
+    use 'folke/lsp-colors.nvim'
 
     -- Menus
     use { "nvim-telescope/telescope.nvim", branch = "0.1.x", requires = { "nvim-lua/plenary.nvim" } }
@@ -87,6 +88,10 @@ require("packer").startup(function(use)
     })
     use "jose-elias-alvarez/typescript.nvim"
     use "b0o/schemastore.nvim"
+    use { 
+        "folke/trouble.nvim",
+        requires = "nvim-tree/nvim-web-devicons" 
+    }
 
     -- Other
     use "andweeb/presence.nvim" -- Discord presence

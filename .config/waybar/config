@@ -1,24 +1,26 @@
 {
     "layer": "bottom",
-    "position": "bottom",
+    "position": "top",
     "modules-left": [
-        "sway/workspaces",
-        "sway/mode",
+        "wlr/workspaces",
+    ],
+
+    "modules-center": [
+        "clock"
     ],
 
     "modules-right": [
-        "cpu",
         "memory",
+        "cpu",
         "temperature",
         "pulseaudio",
-        "clock",
         "tray",
     ],
 
     "clock": {
         "interval": 1,
         "format-alt": " {:%e %b %Y}",
-        "format": "{:%H:%M:%S @ %e %B %Y (%a)}",
+        "format": "{:%H:%M:%S ☆ %e %B %Y (%A)}",
     },
 
     "cpu": {
@@ -47,6 +49,25 @@
         "states": {
             "warning": 70,
             "critical": 90
+        }
+    },
+
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "format": "  {icon}  ",
+        "format-icons": {
+            "1": "",
+            "2": "", // kyute kitty as browser window
+            "3": "",
+            "4": "",
+            "5": "ﭮ",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "",
+            "10": ""
         }
     },
 
