@@ -1,5 +1,5 @@
 {
-    "layer": "bottom",
+    "layer": "top",
     "position": "top",
     "modules-left": [
         "wlr/workspaces",
@@ -30,7 +30,7 @@
             "warning": 70,
             "critical": 90,
         },
-        "on-click": "kitty -e 'htop'",
+        "on-click": "alacritty -e 'htop'",
     },
 
     "custom/keyboard-layout": {
@@ -45,7 +45,7 @@
     "memory": {
         "interval": 5,
         "format": " {}%",
-        "on-click": "kitty -e 'htop'", 
+        "on-click": "alacritty -e 'htop'", 
         "states": {
             "warning": 70,
             "critical": 90
