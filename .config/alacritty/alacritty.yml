@@ -1,18 +1,18 @@
 font:
   normal:
-    family: FantasqueSansMono Nerd Font
+    family: SpaceMono Nerd Font
     style: Regular 
 
   bold:
-    family: FantasqueSansMono Nerd Font
+    family: SpaceMono Nerd Font
     style: Bold
 
   italic:
-    family: FantasqueSansMono Nerd Font 
+    family: SpaceMono Nerd Font 
     style: Italic
 
   bold_italic:
-    family: FantasqueSansMono Nerd Font 
+    family: SpaceMono Nerd Font 
     style: Bold
 
   size: 18
