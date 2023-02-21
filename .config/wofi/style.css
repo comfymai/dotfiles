@@ -1,0 +1,47 @@
+*{
+    font-family: SpaceMono Nerd Font;
+}
+
+#input {
+    padding: 12px 20px;
+    border-bottom: 1px solid #ff94a0;
+    color: white;
+    background-color: #610524;
+}
+
+#input:focus {
+    border: none;
+}
+
+#inner-box {
+    background-color: #993242;
+}
+
+#outer-box {
+    background-color: #2b0014;
+}
+
+#entry {
+    padding-left: 4px;
+    border-left: 2px solid #ffb3d1;
+}
+
+#entry:selected {
+    border: 1px solid #ffb3d1;
+    border-left: 6px solid #ffb3d1;
+    background-color: #610524;
+    transition: border-left .325s;
+}
+
+#text {
+    padding: 6px 12px;
+    color: #ffd9ed;
+}
+
+#text:selected {
+    background-color: transparent;
+}
+
+#img:selected {
+    background-color: #610524;
+}
