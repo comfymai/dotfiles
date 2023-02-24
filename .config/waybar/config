@@ -44,7 +44,7 @@
 
     "memory": {
         "interval": 5,
-        "format": " {}%",
+        "format": "  {}%",
         "on-click": "alacritty -e 'htop'", 
         "states": {
             "warning": 70,

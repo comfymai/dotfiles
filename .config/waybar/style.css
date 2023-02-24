@@ -8,8 +8,8 @@
     min-height: 0;
     margin: 0;
     padding: 1px 1px 0 1px;
-    font-family: SpaceMono Nerd Font;
-    font-size: .9rem;
+    font-family: Monofur Nerd Font;
+    font-size: 1.05rem;
 }
 
 #waybar {
@@ -24,9 +24,9 @@
 #temperature,
 #pulseaudio,
 #tray {
-    margin-top: 4px;
+    margin-top: 3px;
     margin-bottom: 4px;
-    padding: .4rem 1rem;
+    padding: .2rem 1rem;
     font-weight: bold;
     color: @light-pink;
     text-shadow: 0 0 4px #420225;
