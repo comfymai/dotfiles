@@ -1,0 +1,17 @@
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec fcitx5
+exec dunst 
+exec /home/maya/scripts/setup_wallpaper.sh
+exec nm-applet --indicator
+exec ulauncher
+
+# GTK3 applications take a long time to start
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+
+exec alacritty
+
+# Discord
+exec sleep 5 && discord
+

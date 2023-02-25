@@ -1,8 +1,9 @@
 {
-    "layer": "top",
+    "layer": "bottom",
     "position": "top",
     "modules-left": [
-        "wlr/workspaces",
+        "sway/workspaces",
+        "sway/mode"
     ],
 
     "modules-center": [
@@ -10,9 +11,9 @@
     ],
 
     "modules-right": [
+        "temperature",
         "memory",
         "cpu",
-        "temperature",
         "pulseaudio",
         "tray",
     ],
@@ -20,12 +21,12 @@
     "clock": {
         "interval": 1,
         "format-alt": " {:%e %b %Y}",
-        "format": "{:%H:%M:%S ☆ %e %B %Y (%A)}",
+        "format": "{:%H:%M:%S @ %e %b %Y (%A)}",
     },
 
     "cpu": {
         "interval": 5,
-        "format": "  {usage}%",
+        "format": "CPU {usage}%",
         "states": {
             "warning": 70,
             "critical": 90,
@@ -44,7 +45,7 @@
 
     "memory": {
         "interval": 5,
-        "format": "  {}%",
+        "format": "MEM {}%",
         "on-click": "alacritty -e 'htop'", 
         "states": {
             "warning": 70,
@@ -102,7 +103,7 @@
 
     "pulseaudio": {
         "scroll-step": 1,
-        "format": "{volume}% {icon}",
+        "format": "VOL {volume}%",
         "format-bluetooth": "{volume}% {icon}  {format_source}",
         "format-bluetooth-muted": " {icon}  {format_source}",
         "format-muted": "婢 {format_source}",
@@ -129,7 +130,7 @@
     
     "custom/launcher": {
         "format":" ",
-        "on-click": "exec wofi -c ~/.config/wofi/config -I",
+        "on-click": "exec ulauncher-toggle",
         "tooltip": false,
     },
 
@@ -137,7 +138,7 @@
             "thermal-zone": 2,
             "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
             "critical-treshold": 80,
-            "format": "{temperatureC}°C",
+            "format": "TMP {temperatureC}°C",
             "format-critical": "{temperatureC}°C!",
             "interval": 100
         }

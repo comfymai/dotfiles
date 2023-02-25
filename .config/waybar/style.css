@@ -7,13 +7,12 @@
     border: none;
     min-height: 0;
     margin: 0;
-    padding: 1px 1px 0 1px;
-    font-family: Monofur Nerd Font;
-    font-size: 1.05rem;
+    font-family: GohuFont Nerd Font;
+    font-size: 1rem;
 }
 
 #waybar {
-    background: transparent;
+    background: rgba(0, 0, 0, .25);
     color: @text;
 }
 
@@ -24,24 +23,18 @@
 #temperature,
 #pulseaudio,
 #tray {
-    margin-top: 3px;
-    margin-bottom: 4px;
-    padding: .2rem 1rem;
+    padding: 0 1rem;
     font-weight: bold;
-    color: @light-pink;
-    text-shadow: 0 0 4px #420225;
-    margin-bottom: 2px;
-    background-color: rgba(240, 129, 179, 0.25);
-    border: 1px solid rgba(255, 163, 205, 0.55);
-}
-
-#clock {
-    border-radius: 6px;
+    color: black;
+    text-shadow: -1px -1px 0 white,
+        1px 1px 0 white,
+        -1px 1px 0 white,
+        1px -1px 0 white;
+    background: rgba(0, 0, 0, .8);
+    border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 #memory {
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
     border-right: none;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -61,29 +54,13 @@
     color: orange;
 }
 
-#cpu {
-    border-left-color: rgba(255, 163, 205, 0.2);
-    border-right-color: rgba(255, 163, 205, 0.2);
-}
-
-#temperature {
-    margin-right: 6px;
-    border-top-right-radius: 6px;
-    border-bottom-right-radius: 6px;
-    border-left: none;
-}
-
 #temperature.critical {
     color: red;
 }
 
-#pulseaudio {
-    border-radius: 6px;
-    margin-right: 6px;
-}
-
 #tray {
-    border-radius: 6px;
+    border: none;
+    background: rgba(0, 0, 0, .8);
 }
 
 #window {
@@ -92,23 +69,27 @@
 }
 
 #workspaces {
-    font-size: 24px;
+    border: 1px solid rgba(0, 0, 0, .5);
+    padding: 0;
 }
 
 #workspaces button {
-    color: @dark-pink;
-    text-shadow: 0 0 4px @light-pink, 0 1px 2px @light-pink;
-    background-color: rgba(240, 129, 179, 0.25);
-    font-size: .75em;
+    color: black;
+    text-shadow: -1px -1px 0 white,
+        1px 1px 0 white,
+        -1px 1px 0 white,
+        1px -1px 0 white;
+    background-color: rgba(0, 0, 0, 0.8);
+    font-size: .5em;
     margin-bottom: 0px;
     padding: 0;
 }
 
 
-#workspaces button.active {
-    color: @light-pink;
+#workspaces button.focused {
+    color: white;
     text-shadow: none;
-    background-color: rgba(242, 75, 120, 0.75);
+    border: 1px solid white;
     padding-left: 0;
 }
 

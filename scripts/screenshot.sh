@@ -28,7 +28,7 @@ takeScreenshot() {
         exit 1
     fi
 
-    grim -g "$FRAME" - | tee "$TEMP_FILE" | echo "area captured, waiting for user action..."
+    grim -g "$FRAME" - | tee "$TEMP_FILE">/dev/null
 
     ACTION=$(getAction)
 

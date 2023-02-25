@@ -1,21 +1,21 @@
 font:
   normal:
-    family: SpaceMono Nerd Font
+    family: GohuFont Nerd Font
     style: Regular 
 
   bold:
-    family: SpaceMono Nerd Font
+    family: GohuFont Nerd Font
     style: Bold
 
   italic:
-    family: SpaceMono Nerd Font
+    family: GohuFont Nerd Font
     style: Italic
 
   bold_italic:
-    family: SpaceMono Nerd Font
+    family: GohuFont Nerd Font
     style: Bold Italic
 
-  size: 17
+  size: 18
 
 draw_bold_text_with_bright_colors: true
 
@@ -26,32 +26,31 @@ window:
     x: 4
     y: 4
 
-# Colors (Zenburn)
-# Orginally designed by jnurmine for vim.
+# Colors (Ayu Dark)
 colors:
   # Default colors
   primary:
-    background: '0x2e0a1c' # handpicked darker red!
-    foreground: '0xDCDCCC'
+    background: '#000000'
+    foreground: '#B3B1AD'
 
   # Normal colors
   normal:
-    black:   '0x1E2320'
-    red:     '0xD78787'
-    green:   '0x60B48A'
-    yellow:  '0xDFAF8F'
-    blue:    '0x506070'
-    magenta: '0xDC8CC3'
-    cyan:    '0x8CD0D3'
-    white:   '0xDCDCCC'
+    black: '#01060E'
+    red: '#EA6C73'
+    green: '#91B362'
+    yellow: '#F9AF4F'
+    blue: '#53BDFA'
+    magenta: '#FAE994'
+    cyan: '#90E1C6'
+    white: '#C7C7C7'
 
   # Bright colors
   bright:
-    black:   '0x709080'
-    red:     '0xDCA3A3'
-    green:   '0xC3BF9F'
-    yellow:  '0xF0DFAF'
-    blue:    '0x94BFF3'
-    magenta: '0xEC93D3'
-    cyan:    '0x93E0E3'
-    white:   '0xFFFFFF'
+    black: '#686868'
+    red: '#F07178'
+    green: '#C2D94C'
+    yellow: '#FFB454'
+    blue: '#59C2FF'
+    magenta: '#FFEE99'
+    cyan: '#95E6CB'
+    white: '#FFFFFF'

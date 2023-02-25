@@ -1,23 +1,23 @@
--- require("tokyonight").setup {
---     transparent = true,
---     dim_inactive = true,
---     styles = {
---         sidebars = "transparent",
---         floats = "transparent"
---     }
--- }
-
-require("rose-pine").setup {
-    disable_background = true,
-    disable_float_background = true
+require("tokyonight").setup {
+    transparent = true,
+    dim_inactive = true,
+    styles = {
+        sidebars = "transparent",
+        floats = "transparent"
+    }
 }
 
-vim.cmd("colorscheme rose-pine")
+-- require("rose-pine").setup {
+--     disable_background = true,
+--     disable_float_background = true
+-- }
+
+vim.cmd("colorscheme tokyonight")
 
 -- Bottom status line
 require("lualine").setup {
     options = {
-        theme = "rose-pine"
+        theme = "tokyonight"
     }
 }
 
