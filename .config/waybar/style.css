@@ -3,6 +3,10 @@
 @define-color light-pink #ffd9ed;
 @define-color dark-pink #fa2f66;
 
+@define-color main #e807f0;
+@define-color purple #d1bfff;
+@define-color red #ed0212;
+
 * {
     border: none;
     min-height: 0;
@@ -12,7 +16,7 @@
 }
 
 #waybar {
-    background: rgba(0, 0, 0, .25);
+    background: rgba(0, 0, 0, .8);
     color: @text;
 }
 
@@ -23,31 +27,33 @@
 #temperature,
 #pulseaudio,
 #tray {
-    padding: 0 1rem;
+    padding: 4px 1rem;
     font-weight: bold;
     color: black;
-    text-shadow: -1px -1px 0 white,
-        1px 1px 0 white,
-        -1px 1px 0 white,
-        1px -1px 0 white;
+    text-shadow: -1px -1px 0 @purple,
+        1px 1px 0 @purple,
+        -1px 1px 0 @purple,
+        1px -1px 0 @purple;
     background: rgba(0, 0, 0, .8);
     border: 1px solid rgba(0, 0, 0, 0.3);
+    border-top: 2px solid @purple;
 }
 
-#memory {
-    border-right: none;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+#clock {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#temperature {
+    border-bottom-left-radius: 10px;
 }
 
 #memory.warning {
-    background-color: rgba(247, 173, 187, 0.35);
+    border-top: 2px solid @purple;
 }
 
 #memory.critical {
-    color: @dark-pink;
-    background-color: rgba(242, 75, 120, 0.35);
+    border-top: 2px solid @red;
 }
 
 #network.disconnected {
@@ -58,9 +64,16 @@
     color: red;
 }
 
+#pulseaudio {
+    border-bottom-right-radius: 10px;
+    margin-right: 24px;
+}
+
 #tray {
-    border: none;
     background: rgba(0, 0, 0, .8);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-right: 6px;
 }
 
 #window {
@@ -75,26 +88,26 @@
 
 #workspaces button {
     color: black;
-    text-shadow: -1px -1px 0 white,
-        1px 1px 0 white,
-        -1px 1px 0 white,
-        1px -1px 0 white;
+    text-shadow: -1px -1px 0 @purple,
+        1px 1px 0 @purple,
+        -1px 1px 0 @purple,
+        1px -1px 0 @purple;
     background-color: rgba(0, 0, 0, 0.8);
     font-size: .5em;
     margin-bottom: 0px;
-    padding: 0;
+    padding: 2px 0;
 }
 
 
 #workspaces button.focused {
-    color: white;
+    color: black;
     text-shadow: none;
-    border: 1px solid white;
+    background-color: @purple;
     padding-left: 0;
 }
 
 #workspaces button.urgent {
-    border-color: @red;
-    color: @red;
+    border-color: @purple;
+    color: @purple;
 }
 
