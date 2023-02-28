@@ -26,7 +26,8 @@ require("packer").startup(function(use)
     use "folke/todo-comments.nvim"
     use "nvim-tree/nvim-web-devicons"
     use "f-person/git-blame.nvim"
-    use 'folke/lsp-colors.nvim'
+    use "folke/lsp-colors.nvim"
+    use "nvim-tree/nvim-tree.lua"
 
     -- Menus
     use { "nvim-telescope/telescope.nvim", branch = "0.1.x", requires = { "nvim-lua/plenary.nvim" } }
@@ -41,8 +42,8 @@ require("packer").startup(function(use)
 
     -- Motions
     use {
-        'phaazon/hop.nvim',
-        branch = 'v2',
+        "phaazon/hop.nvim",
+        branch = "v2",
     }
     use "tpope/vim-surround"
     use "windwp/nvim-ts-autotag"
@@ -59,25 +60,18 @@ require("packer").startup(function(use)
     }
     use("numToStr/Comment.nvim")
 
-    -- LSP, completion and formatting
-    use {
-        "VonHeikemen/lsp-zero.nvim",
-        requires = {
-            { "neovim/nvim-lspconfig" },
-            { "williamboman/mason.nvim" },
-            { "williamboman/mason-lspconfig.nvim" },
+    use "rafamadriz/friendly-snippets"
+    use 'neovim/nvim-lspconfig'
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
+    use "hrsh7th/nvim-cmp"
+    use "hrsh7th/cmp-buffer"
+    use "hrsh7th/cmp-path"
+    use "hrsh7th/cmp-nvim-lsp"
+    use 'saadparwaiz1/cmp_luasnip'
+    use 'L3MON4D3/LuaSnip'
 
-            { "hrsh7th/nvim-cmp" },
-            { "hrsh7th/cmp-buffer" },
-            { "hrsh7th/cmp-path" },
-            { "saadparwaiz1/cmp_luasnip" },
-            { "hrsh7th/cmp-nvim-lsp" },
-            { "hrsh7th/cmp-nvim-lua" },
 
-            { "L3MON4D3/LuaSnip" },
-            { "rafamadriz/friendly-snippets" },
-        }
-    }
     use("jose-elias-alvarez/null-ls.nvim")
     use("MunifTanjim/prettier.nvim")
     use("editorconfig/editorconfig-vim")
@@ -88,9 +82,9 @@ require("packer").startup(function(use)
     })
     use "jose-elias-alvarez/typescript.nvim"
     use "b0o/schemastore.nvim"
-    use { 
+    use {
         "folke/trouble.nvim",
-        requires = "nvim-tree/nvim-web-devicons" 
+        requires = "nvim-tree/nvim-web-devicons"
     }
 
     -- Other
