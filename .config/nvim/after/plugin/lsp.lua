@@ -1,3 +1,4 @@
+-- Instalação de LSPs sem sair do Neovim (:Mason)
 require("mason").setup()
 require("mason-lspconfig").setup()
 require("mason.settings").set({
@@ -6,6 +7,7 @@ require("mason.settings").set({
     }
 })
 
+-- Configuração dos LSPs
 local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -43,6 +45,7 @@ local on_attach = function(client, bufnr)
     end, { desc = "Format current buffer with LSP" })
 end
 
+-- Adiciona os keymaps e opções a cada LSP instalado
 local get_servers = require('mason-lspconfig').get_installed_servers
 for _, server_name in ipairs(get_servers()) do
     lspconfig[server_name].setup({
@@ -51,31 +54,12 @@ for _, server_name in ipairs(get_servers()) do
     })
 end
 
-local lsp_flags = {
-    debounce_text_changes = 150,
-}
-
-require('lspconfig')['tsserver'].setup {
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities
-}
-require('lspconfig')['rust_analyzer'].setup {
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities
-}
-require('lspconfig')['eslint'].setup {
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities
-}
 require('lspconfig')['jsonls'].setup {
     on_attach = on_attach,
-    flags = lsp_flags,
     capabilities = capabilities,
     settings = {
         json = {
+            -- Adiciona alguns schemas de JSON pra autocompletion
             schemas = require("schemastore").json.schemas {
                 select = {
                     "package.json",
@@ -88,22 +72,8 @@ require('lspconfig')['jsonls'].setup {
         },
     },
 }
-require('lspconfig')['prismals'].setup {
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities
-}
-require('lspconfig')['tailwindcss'].setup {
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities
-}
-require('lspconfig')['html'].setup {
-    on_attach = on_attach,
-    flags = lsp_flags,
-    capabilities = capabilities
-}
 
+-- Configuração da autocompletion
 local luasnip = require("luasnip")
 local cmp = require("cmp")
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -113,7 +83,7 @@ cmp.setup {
             luasnip.lsp_expand(args.body)
         end,
     },
-    mapping = cmp.mapping.preset.insert {
+    mapping = {
         ['<C-u>'] = cmp.mapping.scroll_docs( -4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
@@ -141,36 +111,37 @@ cmp.setup {
         end, { 'i', 's' }),
     },
     sources = {
-        { name = 'nvim_lsp' },
-        { name = 'luasnip' },
+        -- Completion usando...
+        { name = 'nvim_lsp' }, -- ...LSP
+        { name = 'luasnip' }, -- ...snippets
+        { name = 'buffer' } -- ...conteúdo do buffer atual
     },
 }
 
+-- Exibe o status de carregamento do LSP/formatter
 require("fidget").setup()
 
+-- Adiciona algumas utilities e ações ao LSP do Typescript 
+-- (import missing files, etc...)
 local null_ls = require("null-ls")
 require("typescript").setup {}
 null_ls.setup {}
 
-local function keymap(motion, action)
-    vim.keymap.set("n", motion, action)
-end
+-- local function keymap(motion, action)
+--     vim.keymap.set("n", motion, action)
+-- end
 
-require("lspsaga").setup {
-    ui = {
-        code_action = "",
-    }
-}
-keymap("<leader>gh", "<cmd>Lspsaga lsp_finder<cr>")
-keymap("<leader>ca", "<cmd>Lspsaga code_action<cr>")
-keymap("<leader>pd", "<cmd>Lspsaga peek_definition<cr>")
-keymap("<leader>gd", "<cmd>Lspsaga goto_definition<cr>")
-keymap("K", "<cmd>Lspsaga hover_doc<cr>")
-keymap("<leader>sl", "<cmd>Lspsaga show_line_diagnostics<cr>")
-keymap("<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<cr>")
-keymap("<leader>ot", "<cmd>Lspsaga term_toggle<cr>")
-
-require("trouble").setup {}
-keymap("<leader>xx", "<cmd>TroubleToggle<cr>")
-keymap("<leader>xq", "<cmd>TroubleToggle quickfix<cr>")
-
+-- require("lspsaga").setup {}
+-- keymap("<leader>gh", "<cmd>Lspsaga lsp_finder<cr>")
+-- keymap("<leader>ca", "<cmd>Lspsaga code_action<cr>")
+-- keymap("<leader>pd", "<cmd>Lspsaga peek_definition<cr>")
+-- keymap("<leader>gd", "<cmd>Lspsaga goto_definition<cr>")
+-- keymap("K", "<cmd>Lspsaga hover_doc<cr>")
+-- keymap("<leader>sl", "<cmd>Lspsaga show_line_diagnostics<cr>")
+-- keymap("<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<cr>")
+-- keymap("<leader>ot", "<cmd>Lspsaga term_toggle<cr>")
+--
+-- require("trouble").setup {}
+-- keymap("<leader>xx", "<cmd>TroubleToggle<cr>")
+-- keymap("<leader>xq", "<cmd>TroubleToggle quickfix<cr>")
+--

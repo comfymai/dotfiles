@@ -1,4 +1,5 @@
-require("presence"):setup({
+-- Presença do Discord
+require("presence").setup {
     neovim_image_text = "stay comfy 🌙",
     main_image = "file",
     show_time = true,
@@ -6,4 +7,4 @@ require("presence"):setup({
     editing_text = "Editing %s",
     workspace_text = "On %s",
     file_explorer_text = "In a %s menu"
-})
+}
