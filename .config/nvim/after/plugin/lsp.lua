@@ -1,6 +1,7 @@
--- Instalação de LSPs sem sair do Neovim (:Mason)
+-- Instalação de LSPs de dentro do Neovim (:Mason)
 require("mason").setup()
 require("mason-lspconfig").setup()
+require("mason-nvim-dap").setup()
 require("mason.settings").set({
     ui = {
         border = "rounded"
@@ -18,6 +19,7 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
 local on_attach = function(client, bufnr)
+    -- O padrão recomendado
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
@@ -48,10 +50,13 @@ end
 -- Adiciona os keymaps e opções a cada LSP instalado
 local get_servers = require('mason-lspconfig').get_installed_servers
 for _, server_name in ipairs(get_servers()) do
-    lspconfig[server_name].setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-    })
+    -- TODO: Separar certos LSPs em arquivos
+    if server_name ~= "jdtls" then
+        lspconfig[server_name].setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+        })
+    end
 end
 
 require('lspconfig')['jsonls'].setup {
@@ -89,8 +94,7 @@ cmp.setup {
         ['<C-Space>'] = cmp.mapping.complete(),
         ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
         ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-        ['<C-m>'] = cmp.mapping.confirm({ select = true }),
+        ['<cr>'] = cmp.mapping.confirm({ select = true }),
         ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -114,34 +118,32 @@ cmp.setup {
         -- Completion usando...
         { name = 'nvim_lsp' }, -- ...LSP
         { name = 'luasnip' }, -- ...snippets
-        { name = 'buffer' } -- ...conteúdo do buffer atual
+        { name = 'buffer' }, -- ...conteúdo do buffer atual
+        { name = 'path' } -- ...paths do Linux
     },
 }
+
+cmp.setup.cmdline({ '/', '?' }, {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+        { name = 'buffer' }
+    }
+})
 
 -- Exibe o status de carregamento do LSP/formatter
 require("fidget").setup()
 
--- Adiciona algumas utilities e ações ao LSP do Typescript 
+-- Adiciona algumas utilities e ações ao LSP do Typescript
 -- (import missing files, etc...)
 local null_ls = require("null-ls")
 require("typescript").setup {}
 null_ls.setup {}
 
--- local function keymap(motion, action)
---     vim.keymap.set("n", motion, action)
--- end
+local function keymap(motion, action)
+    vim.keymap.set("n", motion, action)
+end
 
--- require("lspsaga").setup {}
--- keymap("<leader>gh", "<cmd>Lspsaga lsp_finder<cr>")
--- keymap("<leader>ca", "<cmd>Lspsaga code_action<cr>")
--- keymap("<leader>pd", "<cmd>Lspsaga peek_definition<cr>")
--- keymap("<leader>gd", "<cmd>Lspsaga goto_definition<cr>")
--- keymap("K", "<cmd>Lspsaga hover_doc<cr>")
--- keymap("<leader>sl", "<cmd>Lspsaga show_line_diagnostics<cr>")
--- keymap("<leader>sb", "<cmd>Lspsaga show_buf_diagnostics<cr>")
--- keymap("<leader>ot", "<cmd>Lspsaga term_toggle<cr>")
---
--- require("trouble").setup {}
--- keymap("<leader>xx", "<cmd>TroubleToggle<cr>")
--- keymap("<leader>xq", "<cmd>TroubleToggle quickfix<cr>")
---
+require("trouble").setup {}
+keymap("<leader>xx", "<cmd>TroubleToggle<cr>")
+keymap("<leader>xq", "<cmd>TroubleToggle quickfix<cr>")
+

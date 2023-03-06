@@ -11,7 +11,8 @@ telescope.setup {
         -- Sobrepõe o NetRw com o file browser do próprio Telescope
         file_browser = {
             hijack_netrw = true,
-            theme = "ivy"
+            theme = "ivy",
+            respect_gitignore = false
         }
     }
 }

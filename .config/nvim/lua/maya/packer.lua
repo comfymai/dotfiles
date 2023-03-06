@@ -80,21 +80,18 @@ require("packer").startup(function(use)
     use("jose-elias-alvarez/null-ls.nvim")
     use("MunifTanjim/prettier.nvim")
     use("editorconfig/editorconfig-vim")
-    use({
-        "glepnir/lspsaga.nvim",
-        branch = "main",
-        requires = { { "nvim-tree/nvim-web-devicons" } },
-        after = "neovim/nvim-lspconfig"
-    })
     use "jose-elias-alvarez/typescript.nvim"
     use "b0o/schemastore.nvim"
     use {
         "folke/trouble.nvim",
         requires = "nvim-tree/nvim-web-devicons"
     }
+    use "mfussenegger/nvim-jdtls"
+    use 'mfussenegger/nvim-dap'
+    use "jay-babu/mason-nvim-dap.nvim"
 
     -- Presença do Discord
-    use "andweeb/presence.nvim" 
+    use "andweeb/presence.nvim"
     -- Persistência de sessões
     use "tpope/vim-obsession"
     -- Preview de .md
